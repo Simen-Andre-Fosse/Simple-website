@@ -15,11 +15,11 @@
 
 .result{
     border: 5px outset grey;
-    border-radius: 5px;
+    border-radius: 10px;
     border-width: 5px;
     text-align: left;
     margin-top: 5px;
-    margin-inline: 30%;
+    margin-right: 80%;
 }
 
 a {
