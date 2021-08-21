@@ -1,0 +1,54 @@
+@media screen and (max-width: 600px) {
+    #Tittel{
+        font-style: italic;
+    } 
+}
+
+
+
+#Tittel {
+    font-style: oblique;
+    font-size: 30px;
+    text-align: left;
+    margin-top: 30%;
+}
+
+.result{
+    border: 5px outset grey;
+    border-radius: 5px;
+    border-width: 5px;
+    text-align: left;
+    margin-top: 5px;
+    margin-inline: 30%;
+}
+
+a {
+    color: black;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+    font-family: sans-serif;
+}
+
+
+/* css for navigasjonsbaren */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  background-color: #606060;
+  min-height: 70px;
+  padding: 0;
+  margin: 0;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 70px;
+  background-color: #606060;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
