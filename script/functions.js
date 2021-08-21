@@ -1,10 +1,10 @@
 
-function print(){
-    console.log(transaksjoner.entries);
+function print(something){
+    console.log(something);
 }
 
 
-function newElement(type, content) {
+function createElement(type, content) {
     var element = document.createElement(type);
     element.innerHTML = content;
 
@@ -18,7 +18,16 @@ function getElement(id){
 }
 
 
-function setText(id, content){
-    var elm = document.getElementById(id);
-    elm.innerHTML = content;
+function setText(contentId, content){
+    document.getElementById(contentId).innerHTML = content + ".";
+}
+
+
+function createRow(){
+
+}
+
+function getTransactions(dataset){
+    var transactions = dataset.transaksjoner;
+    return transactions; 
 }
