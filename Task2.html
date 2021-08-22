@@ -12,8 +12,8 @@
         </div>
 
         <div class="result" id="result1">
-            <p id="demo">Kontonavn</p>
-            <p id="demo2">Saldo</p>
+            <p id="kntnavn">Kontonavn <p>
+            <h2 id="saldo">Saldo </h2>
         </div>
 
         <br>
@@ -22,12 +22,14 @@
             <h2 id="trans_header">Transaksjoner</h2>
             <table id="table">
                 <tr>
-                    <th>Dato</th>
-                    <th>Beskrivelse</th>
-                    <th>Inn</th>
-                    <th>Ut</th>
+                    <th onclick="sortDate(0)">Dato</th>
+                    <th onclick="sortTable(1)">Beskrivelse</th>
+                    <th onclick="sortTable(2)">Inn</th>
+                    <th onclick="sortTable(3)">Ut</th>
                 </tr>
             </table>
+            <h2 id="sum_inn">Sum inn: </h2>
+            <h2 id="sum_ut">Sum ut: </h2>
         </div>
         
 

@@ -2,9 +2,55 @@
 <html>
     <head>
         <title>Task3</title>
-
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
+        <div class="navbar" id="navbar1">
+            <a href="index.html"  id="hjem">Go to task 1</a>
+            <a href="Task2.html" id="task2">Go to task 2</a>
+        </div>
+
+        <div class="result" id="result1">
+            <p id="kntnavn">Kontonavn <p>
+            <h2 id="saldo">Saldo </h2>
+            <form>
+                <label for="categories">Velg en kategori:</label>
+                <select id="categories" name="categories">
+                  <option value="Innskudd">Innskudd</option>
+                  <option value="KontantUttak">KontantUttak</option>
+                  <option value="Lønn">Lønn</option>
+                  <option value="Dagligvarer">Dagligvarer</option>
+                  <option value="Elektronikk">Elektronikk</option>
+                  <option value="Boutgifter">Boutgifter</option>
+                  <option value="Overføring">Overføring</option>
+                  <option value="Kafé/restaurant">KontantUttak</option>
+                  <option value="Transport">Transport</option>
+                </select>
+                <input onclick="console.log('Somehting')" type="button" value="Oppdater">
+              </form>
+        </div>
+
+        <br>
+
+        <div id="table-div">
+            <h2 id="trans_header">Transaksjoner</h2>
+            <table id="table">
+                <tr>
+                    <th onclick="sortDate(0)">Dato</th>
+                    <th onclick="sortTable(1)">Beskrivelse</th>
+                    <th onclick="sortTable(2)">Inn</th>
+                    <th onclick="sortTable(3)">Ut</th>
+                </tr>
+            </table>
+            <h2 id="sum_inn">Sum inn: </h2>
+            <h2 id="sum_ut">Sum ut: </h2>
+        </div>
         
+
+        <script src="script/functions.js" type="text/javascript"></script>
+        <script src="script/main.js" type="text/javascript"></script>
+        <script src="script/task2_script.js" type="text/javascript"></script>
+        <script src="script/task3_script.js" type="text/javascript"></script>
     </body>
 </html>

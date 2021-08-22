@@ -1,9 +1,3 @@
-@media screen and (max-width: 600px) {
-    #Tittel{
-        font-style: italic;
-    } 
-}
-
 
 
 #Tittel {
@@ -16,10 +10,10 @@
 .result{
     border: 5px outset grey;
     border-radius: 10px;
-    border-width: 5px;
+    border-width: 5pxpx;
     text-align: left;
     margin-top: 5px;
-    margin-right: 80%;
+    margin-right: 60%;
 }
 
 table, th, td {

@@ -39,32 +39,24 @@ function createTD(data, tr){
     return td; 
 }
 
-function fillTable(tableId, datasetObject, dataSetName){
-    var myTransactions = getTransactions(datasetObject, dataSetName);
-    var table = getElement(tableId);
-
-    for(var trans of myTransactions){
-        var i = 0;
-        var row = table.insertRow(i);
-        i++; 
-        
-    }
-
-    for( var i = 0, row; row = table.rows[i]; i++) {
-        for(var j = 0, col; col = row.cells[j]; j++){
-
-        }
-    }
-}
-
 function populateTable(tableId, transObject){
     var table = getElement(tableId);
 transObject.forEach(function(object) {
     var tr = document.createElement('tr');
-    tr.innerHTML = '<td>' + split_string(object.dato) + '</td>' +
+    var beloep = object.beloep;
+    var posbeloep = "";
+    var negbeloep = "";
+    if(checkNrPositve(beloep)){
+        posbeloep = beloep + ",-";
+    } else {
+        negbeloep = beloep + ",-";
+    }
+
+    tr.innerHTML = 
+        '<td>' + split_string(object.dato) + '</td>' +
         '<td>' + object.beskrivelse + '</td>' +
-        '<td>' + object.beloep + '</td>' +
-        '<td>' + object.beloep + '</td>';
+        '<td>' + posbeloep + '</td>' +
+        '<td>' + negbeloep  + '</td>';
     table.appendChild(tr);
 });
 }
@@ -79,6 +71,34 @@ function get_a_transaction(objectName, dataSetName, index){
     var the_transaction = trans_list[index];
 
     return the_transaction;
+}
+
+function set_totalInn(objectName, dataSetName){
+    var elm = getElement("sum_inn");
+    var totalinn = 0; 
+    var transac = getTransactions(objectName, dataSetName);
+    
+    for(var trans of transac){
+        if(checkNrPositve(trans.beloep)){
+            var nr = trans.beloep;
+            totalinn += nr;
+        }
+    }
+    setText("sum_inn", ("Sum inn: " + totalinn + " NOK"));
+}
+
+function set_totalUt(objectName, dataSetName){
+    var elm = getElement("sum_inn");
+    var totalut = 0; 
+    var transac = getTransactions(objectName, dataSetName);
+    
+    for(var trans of transac){
+        if(!checkNrPositve(trans.beloep)){
+            var nr = trans.beloep;
+            totalut += nr;
+        }
+    }
+    setText("sum_ut", ("Sum ut: " + Math.round(totalut) + " NOK"));
 }
 
 function checkNrPositve(number){
