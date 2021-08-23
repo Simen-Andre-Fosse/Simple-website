@@ -1,6 +1,8 @@
 Informasjon om koden min og instrukser....
 
 Oppgavene valgte jeg å løse hver for seg ved å kode tre forskjellige HTML dokumenter. 
+jeg har valgt å skrive kode i Visual Studio Code og brukt HTML, CSS og vanilla JS. 
+
 På hver av dokumentene vises løsningene på oppgavene, men som dere kan se øverst på vevsidene,
 så har jeg kodet inn en navigasjonsbar med linker mellom de 3 vevsidene. index.html er første vevsiden
 og viser da løsningen på oppgave 1. Der kan dere ta dere videre til oppgave 2 ved å trykke på Task2 hyperlinken, 
@@ -25,4 +27,5 @@ Jeg har valgt ta i bruk scriptene fra oppgave 1 og 2, i oppgave 3 for eksempel, 
 jeg laget et eget skript for funksjoner som brukes flere ganger i de mer oppgave relaterte scriptene. 
 
 Ellers har jeg lagt inn kommentarer i koden og dokumentasjon for funksjonene for å gjøre det lettere å sette seg inn i. 
+
 
