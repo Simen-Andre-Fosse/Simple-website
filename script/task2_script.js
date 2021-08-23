@@ -1,3 +1,9 @@
+/**
+ * Script nr 2 som kjører hovedsaklig på vevsiden for oppgave 2. 
+ */
+
+//Global variabel for å holde data fra API'et
+
 var dataObject = {};
 
 
@@ -12,7 +18,10 @@ fetch('http://skbank.azurewebsites.net/api/transaksjon')
     set_totalUt(transSet);
 });
 
-
+/**
+ * Sorteringsalgoritme for å sortere kolonne Beskrivelse, Inn og Ut.
+ * @param {Integer} n - table-celle index
+ */
 function sortTable(n) {
     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
     
@@ -55,6 +64,10 @@ function sortTable(n) {
     }
     }
 
+    /**
+     * Sorteringsalgoritme for å sortere Dato kolonnen. 
+     * @param {Integer} n - table-celle index
+     */
     function sortDate(n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = getElement("table");

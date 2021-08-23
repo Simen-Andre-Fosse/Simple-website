@@ -1,6 +1,14 @@
+/**
+ * Script nr 4 som holder generelle funksjoner/algoritmer jeg ville bruke flere ganger.
+ * Dette var for å minimere gjentagelse av kode.  
+ */
+
+
+//Global variabel for å holde data. 
 myDataset = {};
 
 
+//Henter data fra API.
 fetch('http://skbank.azurewebsites.net/api/transaksjon')
 .then(response => response.json())
 .then(data=> {
@@ -8,12 +16,12 @@ fetch('http://skbank.azurewebsites.net/api/transaksjon')
     
 });
 
-function print(something){
-    console.log(something);
-}
-
-
-
+/**
+ * 
+ * @param {String} type - type element man vil lage.
+ * @param {Any} content - Tekst eller annet innhold for elementet. 
+ * @returns - returnerer HTML elementet. 
+ */
 function createElement(type, content) {
     var element = document.createElement(type);
     element.innerHTML = content;
@@ -21,24 +29,33 @@ function createElement(type, content) {
     return element;
 }
 
+
+/**
+ * 
+ * @param {String} id - Id'en for elementet man vil hente. 
+ * @returns - elementet 
+ */
 function getElement(id){
     var element = document.getElementById(id);
 
     return element;
 }
 
-
+/**
+ * 
+ * @param {String} contentId - Id på elementet man vil endre innhold på. 
+ * @param {Any} content - Nye innholdet til elementet. 
+ */
 function setText(contentId, content){
     document.getElementById(contentId).innerHTML = content + ".";
 }
 
 
-function createTD(data, tr){
-    var td = document.createElement("td");
-    td.innerHTML = data; 
-    return td; 
-}
-
+/**
+ * Funksjon som populerer en tabell med data fra objekter. 
+ * @param {String} tableId - ID på tabellen man vil populere med data.
+ * @param {Object} transObject - samling med objekter. 
+ */
 function populateTable(tableId, transObject){
     var table = getElement(tableId);
 transObject.forEach(function(object) {
@@ -61,11 +78,24 @@ transObject.forEach(function(object) {
 });
 }
 
+/**
+ * 
+ * @param {String} objectName - navnet på objektet
+ * @param {String} dataSetName - navnet på property man vil hente verdier for, her transaksjoner. 
+ * @returns - array av transaksjoner. 
+ */
 function getTransactions(objectName, dataSetName){
     var transactions = objectName[dataSetName];
     return transactions; 
 }
 
+/**
+ * Henter en transaksjon etter indeks. 
+ * @param {String} objectName - navn på objektet
+ * @param {String} dataSetName - Navnet på property 
+ * @param {Integer} index - indeksen. 
+ * @returns - transaksjoner. 
+ */
 function get_a_transaction(objectName, dataSetName, index){
     var trans_list = getTransactions(objectName, dataSetName)
     var the_transaction = trans_list[index];
@@ -73,8 +103,11 @@ function get_a_transaction(objectName, dataSetName, index){
     return the_transaction;
 }
 
+/**
+ * Regner ut total sum inn på konto og vise på vevsiden. 
+ * @param {Array} arr_data - Array med transaksjoner.
+ */
 function set_totalInn(arr_data){
-    var elm = getElement("sum_inn");
     var totalinn = 0; 
     for(var trans of arr_data){
         if(checkNrPositve(trans.beloep)){
@@ -85,6 +118,10 @@ function set_totalInn(arr_data){
     setText("sum_inn", ("Sum inn: " + totalinn + " NOK"));
 }
 
+/**
+ * Regner ut total sum ut fra konto og vise på vevsiden. 
+ * @param {Array} arr_data - Array med transaksjoner
+ */
 function set_totalUt(arr_data){
     var elm = getElement("sum_inn");
     var totalut = 0; 
@@ -97,6 +134,12 @@ function set_totalUt(arr_data){
     setText("sum_ut", ("Sum ut: " + Math.round(totalut) + " NOK"));
 }
 
+
+/**
+ * Sjekker om et tall er negativ eller positiv. 
+ * @param {Integer} number - Ett tall
+ * @returns boolsk verdi 
+ */
 function checkNrPositve(number){
     if(number > 0) {
         return true; 
@@ -105,6 +148,11 @@ function checkNrPositve(number){
     }
 }
 
+/**
+ * Splitter en String på bokstaven T. brukt for å splitte opp dato og klokkeslett. 
+ * @param {String} a_string - String man vil splitte. 
+ * @returns String, kun dato uten klokkeslett for transaksjon. 
+ */
 function split_string(a_string){
     var new_string = a_string.split("T");
     return new_string[0];
