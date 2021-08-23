@@ -77,3 +77,34 @@ a {
 #categories {
     width: 200px;
 }
+
+
+/* Styles fra Tobias */
+
+#table tr:nth-child(odd) td {
+    background-color:#eee;
+}
+#table th {
+    background-color:#ccc;
+    cursor: pointer;
+    text-align: left;
+    position: relative;
+}
+#table th, #table td {
+    padding: 7px 15px;
+}
+#table .number {
+    text-align: right;
+}
+#table th:after {
+    display: block;
+    position: absolute;
+    right: 8px;
+    top: 5px;
+}
+#table th.desc:after {
+    content: "▲";
+}
+#table th.asc:after {
+    content: "▼";
+}

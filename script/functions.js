@@ -64,16 +64,16 @@ transObject.forEach(function(object) {
     var posbeloep = "";
     var negbeloep = "";
     if(checkNrPositve(beloep)){
-        posbeloep = beloep + ",-";
+        posbeloep = Number(beloep).toFixed(2) + " kr";
     } else {
-        negbeloep = beloep + ",-";
+        negbeloep = Number(beloep).toFixed(2) + " kr";
     }
 
     tr.innerHTML = 
         '<td>' + split_string(object.dato) + '</td>' +
         '<td>' + object.beskrivelse + '</td>' +
-        '<td>' + posbeloep + '</td>' +
-        '<td>' + negbeloep  + '</td>';
+        '<td class=number>' + posbeloep + '</td>' +
+        '<td class=number>' + negbeloep  + '</td>';
     table.appendChild(tr);
 });
 }
