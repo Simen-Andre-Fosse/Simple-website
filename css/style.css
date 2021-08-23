@@ -21,12 +21,20 @@ CSS filen for styling av elementer og HTML dokumentet.
     margin-right: 60%;
 }
 
-table {
-    
+
+
+tr:nth-child(even){
+    background: #fff
+
 }
 
-tr:nth-child(even){background: #ccc}
-tr:nth-child(odd){background: #fff}
+tr:nth-child(odd){
+    background: #ccc
+}
+
+th:nth-child(-n+4) {
+    background: grey;
+}
 
 /*Styling for tabell, tabell header og tabelldata elementene.*/
 table, th, td {
@@ -35,7 +43,7 @@ table, th, td {
 }
 
 th, td {
-    padding: 10px;
+    padding: 15px;
 }
 
 
