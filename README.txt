@@ -9,9 +9,7 @@ og viser da løsningen på oppgave 1. Der kan dere ta dere videre til oppgave 2 
 og til oppgave 3 ved å trykke på Task3 hyperlinken. 
 
 For både oppgave 2 og 3 skulle jeg lage en tabell hvor man kan sortere etter enten dato, beskrivelse, inn eller ut. 
-Dette har jeg klart å implementere men det er ikke så synlig. 
-Fikk ikke implementert et bra design for dette, men funksjonen er der. Ved å trykke på enten dato, beskrivelse, inn eller ut,
-vil dere se at tabellen sorteres. Ved å trykke 2 ganger på f.eks Dato, vil dere se at den sorteres begge veier, stigende og synkende. 
+Dette har jeg klart å implementere, men sorteringspilene aktiveres ikke før når man først trykker på en av kolonnene. 
 
 I oppgave 3 skal man ha en nedtrekksmeny for kategorier som filtrerer tabellen etter valgt kategori. 
 Den er implementert, men ikke helt som vist i eksempelet i powerpointen. Her valgte jeg å gå for en løsning hvor man
@@ -22,9 +20,9 @@ For eksempel : "Kategori: Lønn ". Har man valgt en kategori og oppdatert tabell
 på oppdater for å vise alle transaksjoner igjen. 
 
 Ellers generelt om scriptene så har jeg prøvd å ha minimalt med gjentagelse av kode, 
-ved å skrive gjenbrukbar funksjoner og algoritmer. Dette gjorde koden også mer ryddig.
+ved å skrive gjenbrukbare funksjoner og algoritmer. Dette gjorde koden også mer ryddig.
 Jeg har valgt ta i bruk scriptene fra oppgave 1 og 2, i oppgave 3 for eksempel, for å gjøre nettop dette.
-jeg laget et eget skript for funksjoner som brukes flere ganger i de mer oppgave relaterte scriptene. 
+jeg har laget et eget skript for funksjoner som brukes flere ganger i de mer oppgave relaterte scriptene. 
 
 Ellers har jeg lagt inn kommentarer i koden og dokumentasjon for funksjonene for å gjøre det lettere å sette seg inn i. 
 

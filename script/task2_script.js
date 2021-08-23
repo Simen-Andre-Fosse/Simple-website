@@ -62,12 +62,9 @@ function sortTable(n) {
             }
         }
     }
-    // Set class for header icon
-    // 1: convert htmlcollection to array
+    
     var headers = [...table.getElementsByTagName('th')];
-    // 2: remove all existing classes on th elements
     headers.forEach(element => element.setAttribute("class",""));
-    // 3: set the correct class for the correct th
     headers[n].setAttribute("class", dir)
     }
 
@@ -110,11 +107,8 @@ function sortTable(n) {
             }
           }
         }
-        // Set class for header icon
-        // 1: convert htmlcollection to array
+       
         var headers = [...table.getElementsByTagName('th')];
-        // 2: remove all existing classes on th elements
         headers.forEach(element => element.setAttribute("class",""));
-        // 3: set the correct class for the correct th
         headers[0].setAttribute("class", dir)
       }

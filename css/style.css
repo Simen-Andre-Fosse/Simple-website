@@ -22,20 +22,6 @@ CSS filen for styling av elementer og HTML dokumentet.
 }
 
 
-
-tr:nth-child(even){
-    background: #fff
-
-}
-
-tr:nth-child(odd){
-    background: #ccc
-}
-
-th:nth-child(-n+4) {
-    background: grey;
-}
-
 /*Styling for tabell, tabell header og tabelldata elementene.*/
 table, th, td {
     border: 2px solid black;
@@ -77,9 +63,6 @@ a {
 #categories {
     width: 200px;
 }
-
-
-/* Styles fra Tobias */
 
 #table tr:nth-child(odd) td {
     background-color:#eee;
