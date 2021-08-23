@@ -38,7 +38,9 @@ function update_data_object(){
     var value = el.options[el.selectedIndex].value;
 
     for (trans of old_data){
-        if(matchCat(trans, value)){
+        if(value === "0"){
+            return old_data;
+        } else if(matchCat(trans, value)){
             new_data_object.push(trans);
         }
     }
@@ -47,7 +49,19 @@ function update_data_object(){
 
 }
 
-function update_table(){
 
+function cleanTable(){
+    var table = getElement("table");
+    while(table.rows.length > 1){
+        table.deleteRow(table.rows.length -1);
+    }
 }
+
+function update_table(){
+    cleanTable();
+    var new_data = update_data_object();
+    populateTable("table", new_data);
+}
+
+
 
