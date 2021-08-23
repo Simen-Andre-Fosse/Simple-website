@@ -49,6 +49,19 @@ function update_data_object(){
 
 }
 
+function get_selected_cat(){
+    var el = getElement("categories");
+    var value = el.options[el.selectedIndex].value;
+    var text = "";
+    if(value === "0"){
+        text = "Transaksjoner";
+    } else {
+    text =  "Kategori: " +  el.options[el.selectedIndex].text;
+    }
+
+    return text; 
+}
+
 
 function cleanTable(){
     var table = getElement("table");
@@ -61,6 +74,9 @@ function update_table(){
     cleanTable();
     var new_data = update_data_object();
     populateTable("table", new_data);
+    set_totalInn(new_data);
+    set_totalUt(new_data);
+    setText("trans_header", get_selected_cat());
 }
 
 

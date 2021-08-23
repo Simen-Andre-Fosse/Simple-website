@@ -8,8 +8,8 @@ fetch('http://skbank.azurewebsites.net/api/transaksjon')
     dataObject = data;
     var transSet = getTransactions(data, "transaksjoner");
     populateTable("table",transSet);
-    set_totalInn(dataObject, "transaksjoner");
-    set_totalUt(dataObject, "transaksjoner");
+    set_totalInn(transSet);
+    set_totalUt(transSet);
 });
 
 

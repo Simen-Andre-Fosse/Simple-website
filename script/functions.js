@@ -73,12 +73,10 @@ function get_a_transaction(objectName, dataSetName, index){
     return the_transaction;
 }
 
-function set_totalInn(objectName, dataSetName){
+function set_totalInn(arr_data){
     var elm = getElement("sum_inn");
     var totalinn = 0; 
-    var transac = getTransactions(objectName, dataSetName);
-    
-    for(var trans of transac){
+    for(var trans of arr_data){
         if(checkNrPositve(trans.beloep)){
             var nr = trans.beloep;
             totalinn += nr;
@@ -87,12 +85,10 @@ function set_totalInn(objectName, dataSetName){
     setText("sum_inn", ("Sum inn: " + totalinn + " NOK"));
 }
 
-function set_totalUt(objectName, dataSetName){
+function set_totalUt(arr_data){
     var elm = getElement("sum_inn");
     var totalut = 0; 
-    var transac = getTransactions(objectName, dataSetName);
-    
-    for(var trans of transac){
+    for(var trans of arr_data){
         if(!checkNrPositve(trans.beloep)){
             var nr = trans.beloep;
             totalut += nr;
