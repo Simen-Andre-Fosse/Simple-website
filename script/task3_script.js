@@ -18,18 +18,11 @@ fetch('http://skbank.azurewebsites.net/api/transaksjon')
     
 });
 
-function getCategoryIDs(arr){
-    var liste = [];
-    for(kat of kategoriData){
-        liste.push(kat.kategoriID);
-    }
-
-    return liste;
-}
 
 
-function matchCat(obj1, obj2){
-    if(obj1.kategoriID === obj2.kategoriID){
+function matchCat(obj1, cat){
+    var id = obj1.kategoriID.toString(); 
+    if(id === cat){
         return true; 
     } else {
         return false; 
@@ -38,13 +31,23 @@ function matchCat(obj1, obj2){
 }
 
 function update_data_object(){
-    var new_data_object = {};
-    var old_data = trans_data;
+    var new_data_object = [];
+    var old_data = getTransactions(trans_data, "transaksjoner");
 
     var el = getElement("categories");
     var value = el.options[el.selectedIndex].value;
 
-    return value; 
+    for (trans of old_data){
+        if(matchCat(trans, value)){
+            new_data_object.push(trans);
+        }
+    }
+
+    return new_data_object
+
+}
+
+function update_table(){
 
 }
 
