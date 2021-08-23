@@ -1,5 +1,4 @@
 
-
 #Tittel {
     font-style: oblique;
     font-size: 30px;
@@ -54,4 +53,10 @@ a {
   padding: 14px 16px;
   text-decoration: none;
 }
+
+#categories {
+    width: 200px;
+}
+
+
 

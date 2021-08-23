@@ -17,17 +17,17 @@
             <form>
                 <select id="categories" name="categories">
                 <option value="Kategorier">Velg kategori</option>
-                <option value="Innskudd">Innskudd</option>
-                <option value="KontantUttak">KontantUttak</option>
-                <option value="Lønn">Lønn</option>
-                <option value="Dagligvarer">Dagligvarer</option>
-                <option value="Elektronikk">Elektronikk</option>
-                <option value="Boutgifter">Boutgifter</option>
-                <option value="Overføring">Overføring</option>
-                <option value="Kafé/restaurant">KontantUttak</option>
-                <option value="Transport">Transport</option>
+                <option value="1">Innskudd</option>
+                <option value="2">KontantUttak</option>
+                <option value="3">Lønn</option>
+                <option value="4">Dagligvarer</option>
+                <option value="5">Elektronikk</option>
+                <option value="6">Boutgifter</option>
+                <option value="7">Overføring</option>
+                <option value="8">KontantUttak</option>
+                <option value="9">Transport</option>
                 </select>
-                <input onclick="console.log('Somehting')" type="button" value="Oppdater">
+                <input onclick="console.log('Something')" type="button" value="Oppdater">
               </form>
         </div>
 
@@ -36,12 +36,14 @@
         <div id="table-div">
             <h2 id="trans_header">Transaksjoner</h2>
             <table id="table">
+                <thead>
                 <tr>
                     <th onclick="sortDate(0)">Dato</th>
                     <th onclick="sortTable(1)">Beskrivelse</th>
                     <th onclick="sortTable(2)">Inn</th>
                     <th onclick="sortTable(3)">Ut</th>
                 </tr>
+                </thead>
             </table>
             <h2 id="sum_inn">Sum inn: </h2>
             <h2 id="sum_ut">Sum ut: </h2>
