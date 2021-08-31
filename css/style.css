@@ -64,30 +64,43 @@ a {
     width: 200px;
 }
 
+/*Setter hver odde rad til annen farge*/
 #table tr:nth-child(odd) td {
     background-color:#eee;
 }
+
+/*Styling for table-header*/
 #table th {
     background-color:#ccc;
     cursor: pointer;
     text-align: left;
     position: relative;
 }
+
+
+/*Padding for table-header og table-data. */
 #table th, #table td {
     padding: 7px 15px;
 }
+
+/*Setter tall til høyre*/
 #table .number {
     text-align: right;
 }
+
+
 #table th:after {
     display: block;
     position: absolute;
     right: 8px;
     top: 5px;
 }
+
+/*Pil opp når dir er desc*/
 #table th.desc:after {
     content: "▲";
 }
+/*Pil ned med dir som asc*/
 #table th.asc:after {
     content: "▼";
 }
