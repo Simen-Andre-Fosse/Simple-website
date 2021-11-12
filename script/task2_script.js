@@ -19,6 +19,7 @@ fetch('http://skbank.azurewebsites.net/api/transaksjon')
 });
 
 /**
+ * Bruker algoritme jeg fant på Stackoverflow.. pluss litt egne endringer.
  * Sorteringsalgoritme for å sortere kolonne Beskrivelse, Inn og Ut.
  * @param {Integer} n - table-celle index
  */
@@ -69,6 +70,7 @@ function sortTable(n) {
     }
 
     /**
+     * Bruker algoritme jeg fant på Stackoverflow.. pluss litt egne endringer.
      * Sorteringsalgoritme for å sortere Dato kolonnen. 
      * @param {Integer} n - table-celle index
      */
